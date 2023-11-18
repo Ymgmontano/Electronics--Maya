@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: rgba(141, 166, 163, 1);
+    color: #fff;
+    margin-top: 40%;
+
+}
+
+.text-left {
+    text-align: left;
+
+}
+
+.text-right {
+    text-align: right;
+
+}
+
+.RS{
+        display: flex;
+        justify-content: space-around;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}

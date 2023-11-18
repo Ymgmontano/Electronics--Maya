@@ -1,0 +1,134 @@
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    margin: 30px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background: var(--C1, rgba(71, 84, 82, 1));
+    width: 39rem;
+}
+
+.text1 {
+    color: #FFF;
+    font-size: 25px;
+    margin: 10px;
+    text-align: center;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 25;
+}
+
+.text-center {
+    font-family: Jost;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.Img {
+    position: fixed;
+    right: -9.5%;
+    width: 20rem;
+    height: 337px;
+    flex-shrink: 0;
+    background: var(--C1, #BBDDD9);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-right: 10%;
+}
+
+.button {
+    margin-bottom: 30px;
+}
+
+.white-space {
+    background-color: white;
+    width: 40%;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+    margin-left: 30%;
+    border-radius: 10px;
+
+
+}
+
+.white-space p {
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+
+.button-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    display: block;
+    padding: 10px 40px;
+    background-color: rgba(47, 56, 55, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.cancel-button {
+    background-color: rgba(47, 56, 55, 1);
+}
+
+.cancel-button1 {
+    display: block;
+}
+
+.slider-card {
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+    margin: 80px;
+    display: flex;
+    align-items: center;
+    border-radius: 1.875rem;
+    background: var(--C1, #BBDDD9);
+    border: 7px solid var(--C1, #BBDDD9);
+    margin-top: 15px;
+    left: 0;
+
+}
+
+.slider-card img {
+    width: 15%;
+    height: auto;
+    margin-right: 10px;
+}
+
+.slider-card-text {
+    flex-grow: 1;
+    text-align: center;
+}
+
+
+.btn-op {
+    margin: 5px;
+    background: var(--C1, #BBDDD9);
+    border: #BBDDD9;
+}
+
+.slider-card:last-child {
+    margin-bottom: 20px;
+
+}

@@ -1,0 +1,97 @@
+body {
+    background-image: url('https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3NzM2ODFfV1RMWkQ?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+.welco {
+    color: white;
+
+}
+
+.page-container {
+    border-radius: 20px;
+    width: 50vw;
+    height: 80vh;
+    background: var(--C1, #BBDDD9);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.form {
+
+    border-radius: 20px;
+    background: rgba(75, 75, 76, 0.06);
+    box-shadow: 0px 4px 70px 0px rgba(0, 0, 0, 0.25);
+    height: 70%;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.wraptop {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-label1 {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.top-label1 input {
+    width: 100%;
+
+}
+
+.top-label {
+    display: flex;
+    flex-direction: column;
+}
+
+.form .top-label {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+
+#registro-button {
+    background-color: rgba(47, 56, 55, 1);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+
+}
+
+.product-image {
+    width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}

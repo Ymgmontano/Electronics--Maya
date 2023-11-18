@@ -1,0 +1,106 @@
+.header {
+    margin: 30px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background: var(--C1, rgba(71, 84, 82, 1));
+    width: 39rem;
+    height: 20%;
+    margin-left: 30%;
+}
+
+.text1 {
+    color: #FFF;
+    font-size: 25px;
+    margin: 10px;
+    text-align: center;
+}
+
+
+.slider-card {
+    display: flex;
+    justify-content: space-between;
+    background: #BBDDD9;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100vw;
+    box-sizing: border-box;
+    margin-top: 3%;
+}
+
+.image-and-controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.slide-image {
+    width: auto;
+    height: 100px;
+    display: block;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn-op {
+    margin: 0 5px;
+    background: #FFFFFF;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.quantity {
+    padding: 5px 10px;
+}
+
+
+.image-container {
+    margin-left: 40px;
+}
+
+.btn-op {
+    margin: 5px;
+    background: var(--C1, #BBDDD9);
+    border: #BBDDD9;
+}
+
+
+.text-top {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+
+.button-end {
+    display: flex;
+    justify-content: flex-end;
+    gap: 3%;
+    margin-top: 20px;
+}
+
+.button-right-button {
+    padding: 10px 40px;
+    background-color: rgba(47, 56, 55, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.slider-card1 {
+    display: flex;
+    justify-content: space-around;
+    background: #BBDDD9;
+    padding: 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100vw;
+    box-sizing: border-box;
+    margin-top: 3%;
+}

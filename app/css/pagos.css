@@ -1,0 +1,72 @@
+.header {
+    margin: 60px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    background: var(--C1, rgba(71, 84, 82, 1));
+    width: 49rem;
+    margin-left: 23%;
+}
+
+.text1 {
+    color: #FFF;
+    font-size: 25px;
+    margin: 10px;
+    text-align: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.section {
+    width: 45%;
+}
+
+.section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #EBDFC5;
+    ;
+}
+
+.button {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+
+.metodo-pago {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 90px;
+}
+
+.metodo-pago img {
+    margin-top: 10px;
+    max-width: 150px; /* Sets the maximum width of the PayPal image to be smaller */
+    height: auto; 
+}
