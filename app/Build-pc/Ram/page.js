@@ -88,14 +88,14 @@ export default function Home() {
                             {/* Tarjeta 1 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NjhfVWtUcEg?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                src='https://bajapc.com.mx/assets/uploads/sw_2_1424.png?1697007189'
                                     width={50}
                                     height={50}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>Intel Core i7-10100</h2>
-                                    <p>Procesador Intel Core i3-10100.</p>
+                                    <h2>Adata XPG Lancer Black DDR5 8GB 5200MHZ</h2>
+                                    <p>Memoria RAM Adata XPG Lancer Black DDR5 8GB 5200MHZ/ AX5U5200C388G CLABK.</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -113,15 +113,15 @@ export default function Home() {
                             {/* Tarjeta 2 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5ODhfQUJJZ1c?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_1_1410.png?1696054712"
                                     alt="Imagen 2"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>AMD Ryzen 7 5800X</h2>
-                                    <p> 8 núcleos optimizados para plataformas de juegos con FPS altos.</p>
+                                    <h2>RAM DDR4 32GB 1x32 3200MHz Adata XPG Spectrix D50 Titanium</h2>
+                                    <p>Memoria RAM DDR4 32GB 1x32 3200MHz Adata XPG Spectrix D50 Titanium / AX4U320032G16A-ST50</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -139,15 +139,15 @@ export default function Home() {
                             {/* Tarjeta 3 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5MjVfbzJBTkU?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_1_1329.png?1689903155"
                                     alt="Imagen 3"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>AMD Ryzen 9 5950X</h2>
-                                    <p>Un procesador con el que podrás jugar y crear por igual. ​16 núcleos. 0 compromisos.</p>
+                                    <h2>Kingston Fury Beast RGB DDR5 / 5200MHz</h2>
+                                    <p>Memoria RAM Kingston Fury Beast RGB DDR5 / 5200MHz / 32GB / Non-ECC / CL40 / XMP / KF552C40BBA-32</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -166,15 +166,15 @@ export default function Home() {
                             <div className="slider-card">
                                 <img
 
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NTFfS282Nk0?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_1_1301.png?1687989806"
                                     alt="Imagen 4"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>Intel Core i9-10900K</h2>
-                                    <p>Cantidad de núcleos. 10 ; Cantidad de subprocesos. 20 ; Frecuencia turbo máxima. 5.30 GHz ; Frecuencia de Intel® Thermal Velocity Boost.</p>
+                                    <h2>RAM 8GB DDR4 ADATA / DDR4 2666mhz </h2>
+                                    <p>Memoria RAM 8GB DDR4 ADATA / DDR4 2666mhz / PC4-21300 / 1X8 / PC</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>

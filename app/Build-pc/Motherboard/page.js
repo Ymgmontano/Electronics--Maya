@@ -88,14 +88,14 @@ export default function Home() {
                             {/* Tarjeta 1 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NjhfVWtUcEg?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/5ff52744-c1c4-4c36-9bc3-485dfe54fe08.94df72ceb22ded3938614c77cc0ac168.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
                                     width={50}
                                     height={50}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>Intel Core i7-10100</h2>
-                                    <p>Procesador Intel Core i3-10100.</p>
+                                    <h2>Tarjeta Madre B75-S</h2>
+                                    <p>Placa base para PC ATX 4 PC DDR3 Memoria 32GB Computadoras de escritorio Placa b.</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -113,14 +113,14 @@ export default function Home() {
                             {/* Tarjeta 2 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5ODhfQUJJZ1c?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://www.asus.com/media/odin/websites/MX/News/egeudlmmzdyg3wv1/890e5811-aa33-c629-08eb-a9892ebefa13.jpg"
                                     alt="Imagen 2"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>AMD Ryzen 7 5800X</h2>
+                                    <h2>Asus ROG STRIX B550-F GAMING AM4</h2>
                                     <p> 8 núcleos optimizados para plataformas de juegos con FPS altos.</p>
                                 </div>
                                 <div className="cart-section">
@@ -139,15 +139,15 @@ export default function Home() {
                             {/* Tarjeta 3 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5MjVfbzJBTkU?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://lb1.highpro.com.mx/2240-large_default/tarjeta-madre-asus-rog-strix-b550-f-gaming-am4.jpg"
                                     alt="Imagen 3"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>AMD Ryzen 9 5950X</h2>
-                                    <p>Un procesador con el que podrás jugar y crear por igual. ​16 núcleos. 0 compromisos.</p>
+                                    <h2>TUF Gaming X570-Pro WiFi II</h2>
+                                    <p>ofrece confiabilidad probada en batalla para cualquier compilación gaming.</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -166,14 +166,14 @@ export default function Home() {
                             <div className="slider-card">
                                 <img
 
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NTFfS282Nk0?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://www.pchmayoreo.com/pub/media/catalog/product/1/9/195553494632-a-01.png"
                                     alt="Imagen 4"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>Intel Core i9-10900K</h2>
+                                    <h2>ASUS ROG STRIX Z690-E GAMING WIFI DDR5LGA1700/WIFI/RGB</h2>
                                     <p>Cantidad de núcleos. 10 ; Cantidad de subprocesos. 20 ; Frecuencia turbo máxima. 5.30 GHz ; Frecuencia de Intel® Thermal Velocity Boost.</p>
                                 </div>
                                 <div className="cart-section">

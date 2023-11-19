@@ -89,13 +89,13 @@ export default function Home() {
                             {/* Tarjeta 1 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NjhfVWtUcEg?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_yey_4_2023_02_08t152405_744.png?1675899251"
                                     width={50}
                                     height={50}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>Intel Core i7-10100</h2>
-                                    <p>Procesador Intel Core i3-10100.</p>
+                                    <h2>Cooler Master - Hyper 212 Black Edition con LGA1700</h2>
+                                    <p>Disipador para CPU Disipador y Ventilador para Procesador Cooler Master Hyper 212 Black Edition Con LGA1700 - 120mm X1 Intel y AMD / RR-212S-20PK-R2</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -114,14 +114,14 @@ export default function Home() {
                             {/* Tarjeta 2 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5ODhfQUJJZ1c?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_1_372.png?1620856886"
                                     alt="Imagen 2"
                                     width={150}
                                     height={150}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>AMD Ryzen 7 5800X</h2>
-                                    <p> 8 núcleos optimizados para plataformas de juegos con FPS altos.</p>
+                                    <h2>Cooler Master i71C RGB </h2>
+                                    <p>Disipador de calor Cooler Master i71C RGB / Compatible con intel 115X / Aura Sync / RGB Fusion / Ventilador de 120mm</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -139,15 +139,15 @@ export default function Home() {
                             {/* Tarjeta 3 */}
                             <div className="slider-card">
                                 <img
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5MjVfbzJBTkU?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_1_1448.png?1698956960"
                                     alt="Imagen 3"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>AMD Ryzen 9 5950X</h2>
-                                    <p>Un procesador con el que podrás jugar y crear por igual. ​16 núcleos. 0 compromisos.</p>
+                                    <h2>DeepCool AG620 BK ARGB</h2>
+                                    <p>Disipador para CPU DeepCool AG620 BK ARGB / 120mm / 300-1850RPM / Negro / R-AG620-BKANMN-G-2</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
@@ -166,15 +166,15 @@ export default function Home() {
                             <div className="slider-card">
                                 <img
 
-                                    src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NTFfS282Nk0?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
+                                    src="https://bajapc.com.mx/assets/uploads/sw_1_1446.png?1698955352"
                                     alt="Imagen 4"
                                     width={150}
                                     height={150}
                                     onClick={handleCarritoClick}
                                 />
                                 <div className="slider-card-text">
-                                    <h2>Intel Core i9-10900K</h2>
-                                    <p>Cantidad de núcleos. 10 ; Cantidad de subprocesos. 20 ; Frecuencia turbo máxima. 5.30 GHz ; Frecuencia de Intel® Thermal Velocity Boost.</p>
+                                    <h2> DeepCool AK400 ZERO DARK PLUS</h2>
+                                    <p>Disipador DeepCool AK400 ZERO DARK PLUS / 120mm / 500-1650RPM / Negro / R-AK400-BKNNMD-G-1</p>
                                 </div>
                                 <div className="cart-section">
                                     <p>$8,399.00</p>
