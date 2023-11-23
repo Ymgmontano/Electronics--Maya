@@ -105,6 +105,9 @@ function Login() {
                     <Link href="/Registrase">
                         <button id="registro-button">Registrarse</button>
                     </Link>
+                    <Link href="/">
+                    <button id="back-button">Regresar</button>
+                </Link>
                 </div>
             </form>
         </div>

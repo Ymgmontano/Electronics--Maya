@@ -44,7 +44,8 @@ body {
 
 
 #inicio-sesion-button,
-#registro-button {
+#registro-button,
+#back-button {
     background-color: rgba(47, 56, 55, 1);
     color: white;
     border: none;
