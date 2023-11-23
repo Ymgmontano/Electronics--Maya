@@ -74,12 +74,16 @@ const CarritoV = () => {
 
     const showSuccessAlert = () => {
         Swal.fire({
-            title: 'Éxito',
-            text: 'Pago realizado correctamente',
-            icon: 'success',
-            confirmButtonText: 'Ok'
+          title: 'Éxito',
+          text: 'Pago realizado correctamente',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = '/';
+          }
         });
-    }
+      };      
 
     return (
         <div className="page-container">

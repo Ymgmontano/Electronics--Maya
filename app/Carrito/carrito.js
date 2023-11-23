@@ -66,9 +66,21 @@ const CarritoV = () => {
         }, 0);
     };
 
-    const eliminarProducto = (item) => {
-        const { [item]: _, ...newProducts } = products;
-        setProducts(newProducts);
+    const eliminarProducto = async (item) => {
+        try {
+            const response = await fetch(`http://127.0.0.1:3001/carf/${products[item].id}`, {
+                method: 'DELETE',
+            });
+    
+            if (response.ok) {
+                const { [item]: _, ...newProducts } = products;
+                setProducts(newProducts);
+            } else {
+                console.error('Error al eliminar el producto');
+            }
+        } catch (error) {
+            console.error('Error al eliminar el producto:', error);
+        }
     };
 
     const redirigirAotraPagina = () => {
