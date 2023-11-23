@@ -123,7 +123,7 @@ const CarritoV = () => {
                                 className="btn-op"
                             >
                                 {' '}
-                                -{' '}
+                                {' '}
                             </button>
                             <span className="quantity">{products[item].quantity}</span>
                             <button
@@ -131,11 +131,11 @@ const CarritoV = () => {
                                 className="btn-op"
                             >
                                 {' '}
-                                +{' '}
+                                {' '}
                             </button>
                         </div>
                         <button onClick={() => eliminarProducto(item)} className="btn-op">
-                            Eliminar
+                            
                         </button>
                     </div>
                 </div>

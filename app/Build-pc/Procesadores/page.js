@@ -24,16 +24,46 @@ export default function Procesadores() {
     }, []);
 
     const handleCarritoClick = (product) => {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Se agregó al carrito',
-            showConfirmButton: false,
-            timer: 1500,
-            customClass: {
-                popup: 'my-custom-alert',
+        fetch('http://127.0.0.1:3001/carf', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-        });
+            body: JSON.stringify({
+                id: product.id,
+                title: product.title,
+                image: product.image,
+                price: product.price,
+            }),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Error al agregar al carrito');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Producto agregado al carrito:', data);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Se agregó al carrito',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    customClass: {
+                        popup: 'my-custom-alert',
+                    },
+                });
+            })
+            .catch((error) => {
+                console.error('Error al agregar al carrito:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error al agregar al carrito',
+                    text: `Hubo un problema al agregar el producto al carrito. Detalles: ${error.message}`,
+                });
+            });
+
     };
 
     return (
@@ -91,7 +121,7 @@ export default function Procesadores() {
                         <div className="slider">
                             {error && <p className="error-message">{error}</p>}
                             {products.map((product) => (
-                                <div key={product._id} className="slider-card">
+                                <div key={product.id} className="slider-card">
                                     <img src={product.image} width={150} height={150} />
                                     <div className="slider-card-text">
                                         <h2>{product.title}</h2>
@@ -102,8 +132,8 @@ export default function Procesadores() {
                                         <img
                                             src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEzMzc1NDZfc05UemI?session_id=0b2b02a3ebe29ae0379d5aa006b1964476fae68e4970c37b2ed79197e0978d1c&inline=1&preview=1"
                                             alt="Carrito de compras"
-                                            width={50}
-                                            height={50}
+                                            width={120}
+                                            height={120}
                                             onClick={() => handleCarritoClick(product)}
                                         />
                                         <p className="add-text">Agregar</p>
@@ -139,4 +169,4 @@ export default function Procesadores() {
             </footer>
         </>
     );
-}
+};

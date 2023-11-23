@@ -7,7 +7,6 @@ function Buy() {
         <>
             <Navbar></Navbar>
             <Pay></Pay>
-            <Footer></Footer>
         </>
     );
 }

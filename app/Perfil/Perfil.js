@@ -22,7 +22,7 @@ function Cuenta() {
                     </Link>
                 </div>
                 <div className="account-image">
-                    <Link href="/ventas">
+                    <Link href="/Carrito">
                         <img
                             src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjE2MDBfZjlMRlg?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
                             className="perfil-image"
@@ -47,7 +47,7 @@ function Cuenta() {
                     <b>HARWARE DE LA PC</b>
                     <p className="Text-HW">
                         ¿Qué se necesita para armar tu PC?
-                        <Link href="/login">
+                        <Link href="https://es.msi.com/Landing/how-to-build-a-pc">
                             <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
                                 className="arrow-image"
                             />
@@ -55,7 +55,7 @@ function Cuenta() {
                     </p>
                     <p className="Text-HW">
                         ¿Qué es la CPU?
-                        <Link href="/login">
+                        <Link href="https://www.xataka.com/basics/cpu-que-como-sirve">
                             <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
                                 className="arrow-image2"
                             />
@@ -63,7 +63,7 @@ function Cuenta() {
                     </p>
                     <p className="Text-HW">
                         ¿Qué es la RAM?
-                        <Link href="/login">
+                        <Link href="https://www.xataka.com/basics/memoria-ram-que-sirve-como-mirar-cuanta-tiene-tu-ordenador-movil">
                             <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
                                 className="arrow-image3"
                             />
@@ -74,30 +74,7 @@ function Cuenta() {
             <div className="MC">
                 <div className="Text-aling-FQ">
                     <b>MI CUENTA</b>
-                    <p className="Text-HW">
-                        Mis compras
-                        <Link href="/Carrito">
-                            <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
-                                className="arrow-image4"
-                            />
-                        </Link>
-                    </p>
-                    <p className="Text-HW">
-                        Mis direcciones
-                        <Link href="/login">
-                            <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
-                                className="arrow-image5"
-                            />
-                        </Link>
-                    </p>
-                    <p className="Text-HW">
-                        Mis datos
-                        <Link href="/login">
-                            <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
-                                className="arrow-image6"
-                            />
-                        </Link>
-                    </p>
+                    
                     <p className="Text-HW">
                         Facturación
                         <Link href="/login">
