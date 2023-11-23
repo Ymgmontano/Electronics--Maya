@@ -12,22 +12,19 @@ const CarritoV = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://127.0.0.1:3001/carritoA');
+                const response = await fetch('http://127.0.0.1:3001/carf');
                 const data = await response.json();
-
-                // Obtener los 3 datos más recientes
-                const latestProducts = Object.values(data).slice(0, 3);
+                const latestProducts = Object.values(data).slice(0, 9);
 
                 setProducts(latestProducts.reduce((acc, product, index) => {
                     acc[`item${index + 1}`] = {
                         quantity: product.quantity || 1,
+                        title: product.title || '',
                         price: product.price || 0,
                         image: product.image || '',
                     };
                     return acc;
                 }, {}));
-
-                // Calcular el precio total
                 const total = latestProducts.reduce((acc, product) => {
                     return acc + (product.quantity || 1) * (product.price || 0);
                 }, 0);
@@ -63,6 +60,12 @@ const CarritoV = () => {
         }
     };
 
+    const calculateTotalPrice = () => {
+        return Object.keys(products).reduce((acc, item) => {
+            return acc + (products[item].quantity || 1) * (products[item].price || 0);
+        }, 0);
+    };
+
     const eliminarProducto = (item) => {
         const { [item]: _, ...newProducts } = products;
         setProducts(newProducts);
@@ -82,7 +85,7 @@ const CarritoV = () => {
                     <div className="image-wrapper"></div>
                     <p className="text-center">Total a Pagar: $</p>
                     <div className="white-space">
-                        <p>{totalPrice}</p>
+                        <p className="text-center">{`$${calculateTotalPrice()}`}</p>
                     </div>
                     <div className="button-container">
                         <button className="button cancel-button">
@@ -97,7 +100,6 @@ const CarritoV = () => {
                     </div>
                 </div>
             </div>
-
             {Object.keys(products).map((item) => (
                 <div key={item} className="slider-card">
                     <img
@@ -107,9 +109,9 @@ const CarritoV = () => {
                         alt={`Imagen de ${item}`}
                     />
                     <div className="slider-card-text">
-                        <p>Procesador Intel Core i3-10100.</p>
+                        <p>{products[item].title}</p>
                         <div className="white-space">
-                            <p className="text-center">{`$${products[item].price * products[item].quantity}`}</p>
+                            <p className="text-center">${products[item].price}</p>
                         </div>
                     </div>
                     <div className="cart-section">

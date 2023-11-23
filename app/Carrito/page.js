@@ -7,7 +7,7 @@ function Carrito() {
         <>
         <NavbarP></NavbarP>
         <CarritoV></CarritoV>
-        <Footer></Footer>
+
         </>
     );
 }

@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   const handleCarritoClick = (product) => {
-    fetch('http://127.0.0.1:3001/carritoA', {
+    fetch('http://127.0.0.1:3001/carf', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ const Home = () => {
             <div className="slider">
               {error && <p className="error-message">{error}</p>}
               {products.map((product) => (
-                <div key={product._id} className="slider-card">
+                <div key={product.id} className="slider-card">
                   <img src={product.image} width={150} height={150} />
                   <div className="slider-card-text">
                     <h2>{product.title}</h2>

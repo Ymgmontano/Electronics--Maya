@@ -23,18 +23,47 @@ export default function Home() {
                 setError('No se pudieron cargar los productos. Inténtalo de nuevo más tarde.');
             });
     }, []);
-
     const handleCarritoClick = (product) => {
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Se agregó al carrito',
-            showConfirmButton: false,
-            timer: 1500,
-            customClass: {
-                popup: 'my-custom-alert',
+        fetch('http://127.0.0.1:3001/carf', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
             },
-        });
+            body: JSON.stringify({
+                id: product.id,
+                title: product.title,
+                image: product.image,
+                price: product.price,
+            }),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Error al agregar al carrito');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Producto agregado al carrito:', data);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Se agregó al carrito',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    customClass: {
+                        popup: 'my-custom-alert',
+                    },
+                });
+            })
+            .catch((error) => {
+                console.error('Error al agregar al carrito:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error al agregar al carrito',
+                    text: `Hubo un problema al agregar el producto al carrito. Detalles: ${error.message}`,
+                });
+            });
+
     };
 
     return (
@@ -92,7 +121,7 @@ export default function Home() {
                         <div className="slider">
                             {error && <p className="error-message">{error}</p>}
                             {products.map((product) => (
-                                <div key={product._id} className="slider-card">
+                                <div key={product.id} className="slider-card">
                                     <img src={product.image} width={150} height={150} />
                                     <div className="slider-card-text">
                                         <h2>{product.title}</h2>
@@ -140,4 +169,4 @@ export default function Home() {
             </footer>
         </>
     );
-}
+};
