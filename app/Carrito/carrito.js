@@ -6,32 +6,47 @@ import '../css/Carrito.css';
 const CarritoV = () => {
     const router = useRouter();
 
-    const [products, setProducts] = useState({
-        item1: { quantity: 1, price: 2, image: 'https://www.cyberpuerta.mx/img/product/M/CP-ACTECK-AC-929547-1.jpg' },
-        item2: { quantity: 1, price: 3, image: 'https://www.cyberpuerta.mx/img/product/M/CP-OCELOTGAMING-OG-CE1-1.jpg' },
-        item3: { quantity: 1, price: 1, image: 'https://www.cyberpuerta.mx/img/product/M/CP-ACTECK-AC-935142-fb7304.jpg' },
-    });
-
+    const [products, setProducts] = useState({});
     const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
-        const calculateTotalPrice = () => {
-            const total = Object.values(products).reduce(
-                (acc, product) => acc + product.quantity * product.price,
-                0
-            );
-            setTotalPrice(total);
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://127.0.0.1:3001/carritoA');
+                const data = await response.json();
+
+                // Obtener los 3 datos más recientes
+                const latestProducts = Object.values(data).slice(0, 3);
+
+                setProducts(latestProducts.reduce((acc, product, index) => {
+                    acc[`item${index + 1}`] = {
+                        quantity: product.quantity || 1,
+                        price: product.price || 0,
+                        image: product.image || '',
+                    };
+                    return acc;
+                }, {}));
+
+                // Calcular el precio total
+                const total = latestProducts.reduce((acc, product) => {
+                    return acc + (product.quantity || 1) * (product.price || 0);
+                }, 0);
+
+                setTotalPrice(total);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         };
 
-        calculateTotalPrice();
-    }, [products]);
+        fetchData();
+    }, []);
 
     const incrementQuantity = (item) => {
         setProducts((prevProducts) => ({
             ...prevProducts,
             [item]: {
                 ...prevProducts[item],
-                quantity: prevProducts[item].quantity + 1,
+                quantity: (prevProducts[item].quantity || 1) + 1,
             },
         }));
     };
@@ -42,7 +57,7 @@ const CarritoV = () => {
                 ...prevProducts,
                 [item]: {
                     ...prevProducts[item],
-                    quantity: prevProducts[item].quantity - 1,
+                    quantity: (prevProducts[item].quantity || 1) - 1,
                 },
             }));
         }

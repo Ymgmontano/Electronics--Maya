@@ -1,10 +1,10 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from 'react';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
 import '../css/home-build.css';
 
-export default function Home() {
+const Home = () => {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
 
@@ -16,24 +16,54 @@ export default function Home() {
         }
         return response.json();
       })
-      .then((data) => setProducts(data.slice(0, 4))) // Solo toma los primeros 4 elementos
+      .then((data) => setProducts(data.slice(0, 4)))
       .catch((error) => {
         console.error('Error obteniendo productos:', error);
         setError('No se pudieron cargar los productos. Inténtalo de nuevo más tarde.');
       });
   }, []);
-  
+
   const handleCarritoClick = (product) => {
-    Swal.fire({
-      position: 'top-end',
-      icon: 'success',
-      title: 'Se agregó al carrito',
-      showConfirmButton: false,
-      timer: 1500,
-      customClass: {
-        popup: 'my-custom-alert',
+    fetch('http://127.0.0.1:3001/carritoA', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
       },
-    });
+      body: JSON.stringify({
+        id: product.id,
+        title: product.title,
+        image: product.image,
+        price: product.price,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Error al agregar al carrito');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Producto agregado al carrito:', data);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Se agregó al carrito',
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            popup: 'my-custom-alert',
+          },
+        });
+      })
+      .catch((error) => {
+        console.error('Error al agregar al carrito:', error);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error al agregar al carrito',
+          text: `Hubo un problema al agregar el producto al carrito. Detalles: ${error.message}`,
+        });
+      });
+      
   };
 
   return (
@@ -139,5 +169,6 @@ export default function Home() {
       </footer>
     </>
   );
+};
 
-}
+export default Home;
