@@ -37,13 +37,11 @@ const Home = () => {
       }),
     })
       .then((response) => {
-        if (!response.ok) {
-          throw new Error('Error al agregar al carrito');
-        }
+        console.log('Response status:', response.status);
         return response.json();
       })
       .then((data) => {
-        console.log('Producto agregado al carrito:', data);
+        console.log('Data from server:', data);
         Swal.fire({
           position: 'top-end',
           icon: 'success',
@@ -63,8 +61,8 @@ const Home = () => {
           text: `Hubo un problema al agregar el producto al carrito. Detalles: ${error.message}`,
         });
       });
-      
   };
+
 
   return (
     <>
