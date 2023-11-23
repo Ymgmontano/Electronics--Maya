@@ -1,187 +1,115 @@
 "use client"
-import React, { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
-import '../css/EstilosVenta.css'
-import '../css/EstilosCards.css'
-
+import React, { useState, useEffect } from 'react';
+import '../css/EstilosVenta.css';
+import '../css/EstilosCards.css';
+import Swal from 'sweetalert2';
 
 const Ventas = () => {
+    const [products, setProducts] = useState([]);
+    const [error, setError] = useState(null);
 
-    const [showModal, setShowModal] = useState(false);
+    useEffect(() => {
+        fetch('http://127.0.0.1:3001/productosA')
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Error al obtener productos');
+                }
+                return response.json();
+            })
+            .then((data) => setProducts(data.slice(4, 8)))
+            .catch((error) => {
+                console.error('Error obteniendo productos:', error);
+                setError(
+                    'No se pudieron cargar los productos. Inténtalo de nuevo más tarde.'
+                );
+            });
+    }, []);
 
-    const handleShowModal = () => {
-        setShowModal(true);
-        // Agrega la clase modal-open a las tarjetas cuando se muestra el modal
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.classList.add('modal-open');
-        });
+    const handleCarritoClick = (product) => {
+        fetch('http://127.0.0.1:3001/carf', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: product.id,
+                title: product.title,
+                image: product.image,
+                price: product.price,
+            }),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Error al agregar al carrito');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log('Producto agregado al carrito:', data);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Se agregó al carrito',
+                    showConfirmButton: false,
+                    timer: 1500,
+                    customClass: {
+                        popup: 'my-custom-alert',
+                    },
+                });
+            })
+            .catch((error) => {
+                console.error('Error al agregar al carrito:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error al agregar al carrito',
+                    text: `Hubo un problema al agregar el producto al carrito. Detalles: ${error.message}`,
+                });
+            });
+
     };
 
-    const handleCloseModal = () => {
-        setShowModal(false);
-        // Quita la clase modal-open de las tarjetas cuando se cierra el modal
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.classList.remove('modal-open');
-        });
+    const renderProductCards = () => {
+        return products.map((product) => (
+            <div key={product.id} className="card">
+                <div className="price-and-favorite">
+                    <div className="price">${product.price}</div>
+                    <span className="favorite-icon">❤</span>
+                </div>
+                <div className="zoom-container">
+                    <img
+                        src={product.image}
+                        alt="Imagen del producto"
+                        className="product-image"
+                    />
+                </div>
+                <div className="text-section">
+                    <h2 className="title">{product.title}</h2>
+                </div>
+                <button
+                    onClick={() => handleCarritoClick(product)}
+                    className="add-to-cart"
+                >
+                    Agregar
+                </button>
+            </div>
+        ));
     };
+
     return (
         <div>
             <div className="container">
                 <h1>ARMA TU EQUIPO</h1>
             </div>
-
             <div className="container2">
                 <h1 className="txt-PlacaMadre">PLACA MADRE</h1>
             </div>
-
-
-            <div className="card-container">
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <div className="zoom-container" >
-                        <img
-                            src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5MDBfQTBQb0w?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                            alt="Imagen del producto"
-                            className="product-image"
-                        />
-                    </div>
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button onClick={handleShowModal}>Agregar</button>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc4OTJfZVJNQTc?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc4MjBfVzZ2SzI?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc4NDBfQkN0NE0?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-            </div>
-
-
-
-
+            <div className="card-container">{renderProductCards()}</div>
             <div className="container2">
                 <h1 className="txt-PlacaMadre">PROCESADORES</h1>
             </div>
-
-
-            <div className="card-container">
-
-
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5MjVfbzJBTkU?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5NTFfS282Nk0?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://www.opendrive.com/s/MjdfMjA3Nzc5NjhfVWtUcEg?preview=1&folder_id=MjdfMTQ0NTU0MF8yc2Nieg"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-
-                <div className="card">
-                    <div className="price-and-favorite">
-                        <div className="price">$99.99</div>
-                        <span className="favorite-icon">❤</span>
-                    </div>
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA3Nzc5ODhfQUJJZ1c?session_id=c26aa6022aa8f34f4ac74623ada6ac959ceefb341bd0d719ba5588f1a4bbb3d8&inline=1&preview=1"
-                        alt="Imagen del producto"
-                        className="product-image"
-                    />
-                    <div className="text-section">
-                        <h2 className="title">GIGABYTE B550M DS3H-Motherboard/Placa Base</h2>
-                    </div>
-                    <button className="add-to-cart">Agregar</button>
-                </div>
-            </div>
+            <div className="card-container">{renderProductCards()}</div>
         </div>
     );
 };
+
 export default Ventas;
