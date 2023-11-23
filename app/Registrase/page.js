@@ -16,7 +16,7 @@ function Registrarse() {
 
     const handlerClick = (e) => {
         e.preventDefault();
-        const formData = new FormData(formRef.current); // Usa la referencia del formulario
+        const formData = new FormData(formRef.current);
         let URI = "http://127.0.0.1:3001/Usuarios";
         let options = {
             method: "POST",
