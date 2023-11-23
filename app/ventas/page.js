@@ -1,11 +1,11 @@
 import Ventas from './Venta'
-import Navbar from '../navbar';
+import Vnarbar from './Navbar';
 import Footer from '../footer';
 
 const Venta = () => {
     return (
         <div>
-            <Navbar />
+            <Vnarbar />
             <Ventas/>
             <Footer/>
         </div>
