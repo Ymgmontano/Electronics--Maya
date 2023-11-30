@@ -113,7 +113,7 @@ export default function Home() {
                     </div>
                     <div className="main-content">
                         <div className="top-bar">
-                            <p>PROCESADORES</p>
+                            <p>VENTILADORES</p>
                         </div>
                         <div className="slider">
                             {error && <p className="error-message">{error}</p>}

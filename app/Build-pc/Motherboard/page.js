@@ -96,7 +96,7 @@ export default function Home() {
             <div>
                 <div style={{ display: 'flex' }}>
                     <div className="sidebar">
-                        <Link href="/Build-pc/Procesadores">
+                        <Link href="/Build-pc/Tarjeta">
                             <div className="menu-item">PROCESADORES</div>
                         </Link>
                         <Link href="/Build-pc/Motherboard" >
@@ -117,7 +117,7 @@ export default function Home() {
                     </div>
                     <div className="main-content">
                         <div className="top-bar">
-                            <p>PROCESADORES</p>
+                            <p>TARJETAS MADRE</p>
                         </div>
                         <div className="slider">
                             {error && <p className="error-message">{error}</p>}
