@@ -85,7 +85,7 @@ function Cuenta() {
                     </p>
                     <p className="Text-HW">
                         Ayuda
-                        <Link href="/login">
+                        <Link href="https://drive.google.com/drive/folders/16SN9Wsf3oNtT8FY5b3Id2Ykx_kM2q2x-?usp=sharing">
                             <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMjkyNTdfM1FiRGY?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
                                 className="arrow-image8"
                             />
