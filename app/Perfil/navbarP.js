@@ -11,19 +11,6 @@ const NavbarP = () => {
                         style={{ width: '64px', height: '64px' }}
                     />
                 </Link>
-                <Link href="/">
-                    <img
-                        src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjEyMzQwMTFfVFdyQmo?session_id=dab058506b51eac5cdc82b045e77abb823f65833b66269f75f3e7428a80aa08f&inline=1&preview=1"
-                        style={{ width: '54px', height: '54px' }}
-                    />
-                </Link>
-            </div>
-            <div className="Inicio">
-                <Link href="/login">
-                    <img src="https://web.opendrive.com/api/v1/download/file.json/MjdfMjA4NTMxMjBfQVA2VUg?session_id=2acad8b2847b1c517031e09ab5a08796e98bef335d368832917e5c092c28faa2&inline=1&preview=1"
-                        style={{ width: '64px', height: '64px' }}
-                    />
-                </Link>
             </div>
         </nav>
     );

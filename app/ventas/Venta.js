@@ -5,7 +5,9 @@ import '../css/EstilosCards.css';
 import Swal from 'sweetalert2';
 
 const Ventas = () => {
-    const [products, setProducts] = useState([]);
+    const [placaMadreProducts, setPlacaMadreProducts] = useState([]);
+    const [procesadoresProducts, setProcesadoresProducts] = useState([]);
+    const [memoriasRAMProducts, setMemoriasRAMProducts] = useState([]); // Nuevo estado
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -16,12 +18,15 @@ const Ventas = () => {
                 }
                 return response.json();
             })
-            .then((data) => setProducts(data.slice(4, 8)))
+            .then((data) => {
+                setPlacaMadreProducts(data.slice(4, 8)); // Placa Madre
+                setProcesadoresProducts(data.slice(0, 4)); // Procesadores
+                setMemoriasRAMProducts(data.slice(12, 16)); // Memorias RAM
+                console.log("Memorias RAM:", data.slice(12, 16)); // Verifica los datos de las memorias RAM
+            })
             .catch((error) => {
                 console.error('Error obteniendo productos:', error);
-                setError(
-                    'No se pudieron cargar los productos. Inténtalo de nuevo más tarde.'
-                );
+                setError('No se pudieron cargar los productos. Inténtalo de nuevo más tarde.');
             });
     }, []);
 
@@ -68,7 +73,7 @@ const Ventas = () => {
 
     };
 
-    const renderProductCards = () => {
+    const renderProductCards = (products) => {
         return products.map((product) => (
             <div key={product.id} className="card">
                 <div className="price-and-favorite">
@@ -100,16 +105,26 @@ const Ventas = () => {
             <div className="container">
                 <h1>ARMA TU EQUIPO</h1>
             </div>
+            {/* Sección de Placa Madre */}
             <div className="container2">
                 <h1 className="txt-PlacaMadre">PLACA MADRE</h1>
             </div>
-            <div className="card-container">{renderProductCards()}</div>
+            <div className="card-container">{renderProductCards(placaMadreProducts)}</div>
+
+            {/* Sección de Procesadores */}
             <div className="container2">
-                <h1 className="txt-PlacaMadre">PROCESADORES</h1>
+                <h1 className="txt-Procesadores">PROCESADORES</h1>
             </div>
-            <div className="card-container">{renderProductCards()}</div>
+            <div className="card-container">{renderProductCards(procesadoresProducts)}</div>
+            {/* Sección de Memorias RAM */}
+        <div className="container2">
+            <h1 className="txt-MemoriasRAM">MEMORIAS RAM</h1>
         </div>
+        <div className="card-container">{renderProductCards(memoriasRAMProducts)}</div>
+    </div>
     );
 };
 
 export default Ventas;
+
+/* tengo un problema con un codigo, al momento de darle click al boton de agregar ya sea con procesador o memoria ram, me pone que no se puede agregar al carrito, pero al agregar las placas madres, esas si me deja, te voy a pasar el codigo */

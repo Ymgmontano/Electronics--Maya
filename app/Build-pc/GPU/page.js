@@ -116,7 +116,7 @@ return (
                 </div>
                 <div className="main-content">
                     <div className="top-bar">
-                        <p>TARJETASS GRAFICAS</p>
+                        <p>TARJETAS GRAFICAS</p>
                     </div>
                     <div className="slider">
                         {error && <p className="error-message">{error}</p>}

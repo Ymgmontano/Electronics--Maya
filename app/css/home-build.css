@@ -9,7 +9,7 @@
     background: var(--C4, #475452);
     color: white;
     position: fixed;
-    top: 0;
+    top: 9%; /* Ajuste del margen superior para desplazar el sidebar hacia abajo */
     left: 0;
     height: 100%;
     overflow-y: scroll;
@@ -35,6 +35,7 @@
     padding: 10px;
     width: 100%;
     font-style: solid;
+    margin-top: 5%; /* Ajusta el margen superior para que el top-bar sea visible */
 }
 
 .slider {
@@ -102,10 +103,15 @@
 
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+    justify-content: space-between; /* Distribuye los elementos a los extremos del contenedor */
+    align-items: center; /* Centra verticalmente los elementos */
     background-color: rgba(141, 166, 163, 1);
     color: #fff;
     z-index: 3;
@@ -117,9 +123,14 @@
     color: #fff;
 }
 
+.logo {
+    margin-left: 10px; 
+}
+
 .nav-links {
     list-style: none;
     display: flex;
+    align-items: center; 
 }
 
 .nav-links li {
