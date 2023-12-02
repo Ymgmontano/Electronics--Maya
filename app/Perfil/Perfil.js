@@ -1,7 +1,47 @@
+"use client"
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 import "../css/perfil.css";
+import io from 'socket.io-client';
+
+
+const socket = io('http://127.0.0.1:4000');
+
+
 
 function Cuenta() {
+    const [message, setMessage] = useState('');
+    const [username, setUserName] = useState('Admin');
+
+    const [listMessages, setListMessages] = useState([{
+        body: "Bienvenido al Chat",
+        user: "Boot-Maya",
+    }]);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        socket.emit('message', { body: message, user: username });
+        const newMsg = {
+            body: message,
+            user: username
+        }
+        setListMessages([...listMessages, newMsg]);
+        setMessage('');
+    }
+
+    useEffect(() => {
+
+        const receiveMessage = msg => {
+            setListMessages([...listMessages, msg])
+        }
+        socket.on('message', receiveMessage);
+
+        return () => socket.off('message', receiveMessage);
+    }, [listMessages])
+
+
+
+
     return (
         <>
             <div className="perfil-container">
@@ -74,7 +114,6 @@ function Cuenta() {
             <div className="MC">
                 <div className="Text-aling-FQ">
                     <b>MI CUENTA</b>
-                    
                     <p className="Text-HW">
                         Facturación
                         <Link href="/login">
@@ -93,8 +132,32 @@ function Cuenta() {
                     </p>
                 </div>
             </div>
-            <div className="EXIT-BT">
+            <div className='conteiner-chat'>
+                <input onChange={event => setUserName(event.target.value)}
+                    className='txt-username'
+                    type="text"
+                    placeholder='username' />
 
+                <div className='div-chat'>
+                    {listMessages.map((message, idx) => (
+                        <p key={message + idx}>{message.user}:
+                            {message.body}</p>
+                    ))
+                    }
+                </div>
+                <form onSubmit={handleSubmit} className="form">
+                    <p className="description">Type your message.</p>
+                    <div className='div-type-chat'>
+                        <input
+                            value={message}
+                            placeholder="Type your message"
+                            onChange={e => setMessage(e.target.value)}
+                            type="text" name="text" id="chat-message"
+                            className="input-style"
+                        />
+                        <button type="submit">Enviar</button>
+                    </div>
+                </form>
             </div>
         </>
     );

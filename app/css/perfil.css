@@ -126,13 +126,6 @@ p {
     margin-left: 23%;
 }
 
-.EXIT-BT {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-right: 5%;
-}
-
 .btn-exit {
     margin-top: 10px;
     background-color: rgba(150, 150, 140, 1);
@@ -140,4 +133,100 @@ p {
     padding: 10px 20px;
     font-size: medium;
     margin-right: 2%;
+}
+
+
+
+.conteiner-chat {
+    position: flex;
+    bottom: 0;
+    left: 0;
+    transform: translateX(90px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40rem;
+    margin-top: 5%;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    background: #829492;
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+}
+
+.description {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #bbddd9;
+}
+
+.form div {
+    display: flex;
+    width: auto;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.form div input {
+    outline: none;
+    line-height: 1.5rem;
+    font-size: 0.875rem;
+    color: #000000;
+    padding: 0.5rem 0.875rem;
+    background-color: rgb(255 255 255 / 0.05);
+    border: 1px solid rgba(253, 253, 253, 0.363);
+    border-radius: 0.375rem;
+    flex: 1 1 auto;
+    margin-top: 1rem;
+}
+
+.form div input::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.form div input:focus {
+    border: 1px solid rgb(99 102 241);
+}
+
+.form div button {
+    color: #000000;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    padding: 0.625rem 0.875rem;
+    background-color: #b4e0db;
+    border-radius: 0.375rem;
+    border: none;
+    outline: none;
+    margin: 20px;
+}
+
+.form div button:hover,
+.form div button:focus {
+    background-color: rgb(255, 255, 255);
+}
+
+.div-chat {
+    width: auto;
+    height: 15rem;
+    overflow-y: scroll;
+    background: #b4e0db;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.div-chat>p {
+    color: #000000;
+}
+
+.txt-username {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #000000;
 }
