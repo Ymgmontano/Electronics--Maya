@@ -32,12 +32,6 @@ const Imagenes = () => {
                         <p className="text-center" >Arma tu Equipo</p>
                     </div>
                 </div>
-                <p className="favorite-text">Tus Favoritos</p>
-                <div className="no-favorites">
-                    <p>
-                        Aún no tienes favoritos
-                    </p>
-                </div>
             </div>
         </>
     );
