@@ -11,7 +11,7 @@ const Ventas = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:3001/productosA')
+        fetch('http://54.80.112.93:3001/productosA')
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Error al obtener productos');
@@ -31,7 +31,7 @@ const Ventas = () => {
     }, []);
 
     const handleCarritoClick = (product) => {
-        fetch('http://127.0.0.1:3001/carf', {
+        fetch('http://54.80.112.93:3001/carf', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -126,5 +126,3 @@ const Ventas = () => {
 };
 
 export default Ventas;
-
-/* tengo un problema con un codigo, al momento de darle click al boton de agregar ya sea con procesador o memoria ram, me pone que no se puede agregar al carrito, pero al agregar las placas madres, esas si me deja, te voy a pasar el codigo */
