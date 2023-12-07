@@ -6,7 +6,7 @@ import '../css/imgCenter.css';
 
 const Imagenes = () => {
     useEffect(() => {
-        const socket = io('http://54.80.112.93:4000');
+        const socket = io('http://localhost:4000');
 
         // Maneja el evento 'error' en la conexión del socket
         socket.on('connect_error', (error) => {

@@ -13,7 +13,7 @@ const CarritoV = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://54.80.112.93:3001/carf');
+                const response = await fetch('http://127.0.0.1:3001/carf');
                 const data = await response.json();
                 const latestProducts = Object.values(data).slice(0, 9);
 
