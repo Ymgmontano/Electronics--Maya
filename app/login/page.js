@@ -4,7 +4,6 @@ import '../css/Login.css';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
 
-//HELLOMYFRIENDS
 
 function Login() {
     const form = useRef();
@@ -22,7 +21,7 @@ function Login() {
                 text: 'Rellena todos los campos',
             });
         } else {
-            fetch(`http://54.80.112.93:3001/usuarios/${Correo}/${Contrasena}`)
+            fetch(`http://127.0.0.1:3001/usuarios/${Correo}/${Contrasena}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.message === 'Contraseña incorrecta') {

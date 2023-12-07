@@ -9,7 +9,7 @@ const Home = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://54.80.112.93:3001/productosA')
+    fetch('http://127.0.0.1:3001/productosA')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Error al obtener productos');
@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   const handleCarritoClick = (product) => {
-    fetch('http://54.80.112.93:3001/carf', {
+    fetch('http://127.0.0.1:3001/carf', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -5,7 +5,7 @@ import "../css/perfil.css";
 import io from 'socket.io-client';
 
 
-const socket = io('http://54.80.112.93:4000');
+const socket = io('http://127.0.0.1:4000');
 
 
 
@@ -18,16 +18,25 @@ function Cuenta() {
         user: "Boot-Maya",
     }]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        socket.emit('message', { body: message, user: username });
-        const newMsg = {
-            body: message,
-            user: username
+        try {
+            // Enviar el mensaje al servidor a través del socket
+            socket.emit('message', { body: message, user: username });
+            const newMsg = {
+                body: message,
+                user: username
+            };
+            // Actualizar la lista de mensajes localmente
+            setListMessages([...listMessages, newMsg]);
+            // Limpiar el campo de mensaje
+            setMessage('');
+        } catch (error) {
+            // Manejar el error mostrando un mensaje de alerta
+            alert('Error al enviar el mensaje. Por favor, inténtelo de nuevo.');
+            console.error('Error al enviar el mensaje:', error);
         }
-        setListMessages([...listMessages, newMsg]);
-        setMessage('');
-    }
+    };
 
     useEffect(() => {
 

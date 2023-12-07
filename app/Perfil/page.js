@@ -1,5 +1,5 @@
 import NavbarP from "./navbarP";
-import Footer from "../footer";
+import Footer from "../footer/footer";
 import Cuenta from "./Perfil";
 
 function Perfil() {
