@@ -21,7 +21,7 @@ function Login() {
                 text: 'Rellena todos los campos',
             });
         } else {
-            fetch(`http://127.0.0.1:3001/usuarios/${Correo}/${Contrasena}`)
+            fetch(`http://54.80.112.93:3001/usuarios/${Correo}/${Contrasena}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.message === 'Contraseña incorrecta') {

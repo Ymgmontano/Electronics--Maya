@@ -26,7 +26,7 @@ function Pago() {
         const calleNumero = document.querySelector('input[placeholder="Calle y Número exterior"]').value;
 
         const formData = new FormData(formRef.current); // Usa la referencia del formulario
-        let URI = "http://127.0.0.1:3001/Ventas";
+        let URI = "http://54.80.112.93:3001/Ventas";
         let options = {
             method: "POST",
             headers: {

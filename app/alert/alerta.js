@@ -7,7 +7,7 @@ const Alert = () => {
     const [notificaciones, setNotificaciones] = useState([]);
 
     useEffect(() => {
-        const socket = io('http://localhost:4000');
+        const socket = io('http://54.80.112.93:4000');
         socket.on('notificacion', (mensaje) => {
             console.log('Notificación recibida en el cliente:', mensaje);
 
