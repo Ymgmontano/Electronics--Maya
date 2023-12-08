@@ -1,4 +1,4 @@
-import "./css/navbarP.css"
+import "../css/navbarP.css"
 import Link from 'next/link';
 
 

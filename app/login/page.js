@@ -4,7 +4,6 @@ import '../css/Login.css';
 import Link from 'next/link';
 import Swal from 'sweetalert2';
 
-//HELLOMYFRIENDS
 
 function Login() {
     const form = useRef();

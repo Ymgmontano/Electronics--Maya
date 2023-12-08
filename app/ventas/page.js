@@ -1,6 +1,6 @@
 import Ventas from './Venta'
 import Vnarbar from './Navbar';
-import Footer from '../footer';
+import Footer from '../footer/footer';
 
 const Venta = () => {
     return (

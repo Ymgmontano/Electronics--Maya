@@ -126,3 +126,5 @@ const Ventas = () => {
 };
 
 export default Ventas;
+
+/* tengo un problema con un codigo, al momento de darle click al boton de agregar ya sea con procesador o memoria ram, me pone que no se puede agregar al carrito, pero al agregar las placas madres, esas si me deja, te voy a pasar el codigo */

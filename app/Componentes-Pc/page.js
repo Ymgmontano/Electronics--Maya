@@ -1,4 +1,4 @@
-import Navbar from "../navbar";
+import Navbar from "../navbar/navbar";
 import Armatuequipo from "./buildpc";
 import Footer from "./footer";
 

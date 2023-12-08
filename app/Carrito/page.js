@@ -1,4 +1,4 @@
-import NavbarP from "../navbarP";
+import NavbarP from "../navbar/navbarP";
 import Footer from "./footer";
 import CarritoV from "./carrito";
 
